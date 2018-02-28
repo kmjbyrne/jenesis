@@ -1,4 +1,5 @@
 
+![build](https://travis-ci.org/kmjbyrne/vedux.svg?branch=master)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 
