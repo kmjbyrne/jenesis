@@ -1,0 +1,73 @@
+@mixin one-second-transition() {
+	-webkit-transition: 1s ease;
+	-moz-transition: 1s ease;
+	-ms-transition: 1s ease;
+	-o-transition: 1s ease;
+	transition: 1s ease;
+}
+@mixin transition-all($time) {
+	-webkit-transition: $time;
+	-moz-transition: $time;
+	-ms-transition: $time;
+	-o-transition: $time;
+	transition: $time;
+}
+@mixin transition($time, $function) {
+	-webkit-transition: $time $function;
+	-moz-transition: $time $function;
+	-ms-transition: $time $function;
+	-o-transition: $time $function;
+	transition: $time $function;
+}
+
+
+
+$breakpoints: (
+    "phone": 330px,
+    "phone-wide": 425px,
+    "phablet": 560px,
+    "tablet-small": 640px,
+    "tablet": 768px,
+    "tablet-wide": 1024px,
+    "desktop": 1248px,
+    "desktop-wide": 1440px,
+	"desktop-4k": 2560px
+);
+@mixin responsive($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+        @if $type == max {
+            $width: $width - 1px;
+        }
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+@mixin animation-fade-in($animname) {
+	$time: 0.5s;
+   	-webkit-animation: $animname $time; /* Safari and Chrome */
+    -moz-animation: $animname $time; /* Firefox */
+    -ms-animation: $animname $time; /* Internet Explorer */
+    -o-animation: $animname $time; /* Opera */
+    animation: $animname $time;
+}
+
+@mixin abstract-button-theme($color, $background, $hover, $hover-background) {
+    color: $color;
+	border: 1px solid $background;
+    background-color: $background;
+	padding: 12px 50px;
+	font-size: 16px;
+	box-shadow: 0px 0px 0px rgba(0,0,0,0);
+	@include transition-all(200ms);
+    &:hover {
+        color: $hover;
+        background-color: darken($background, 20%);
+		box-shadow: 1px 1px 1px rgba(0,0,0,0.25);
+    }
+}
+@mixin transition-explicit($property, $time:250ms, $function: linear) {
+	transition: $property $time $function;
+}

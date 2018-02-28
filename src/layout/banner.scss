@@ -1,0 +1,103 @@
+.banner {
+    position: relative;
+    &__wrapper {
+        position: relative;
+        background-color: rgba(0, 0, 0, 0.70);
+        width: 100%;
+        height: 170px;
+        @include transition(250ms, ease-in);
+    }
+    &__wrapper:hover {
+        background-color: rgba(0, 0, 0, 0.80);
+    }
+    &__image {
+        width: 100%;
+    }
+    &__underlay {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+        overflow: hidden;
+        max-height: 170px;
+    }
+    &__button-block {
+        position: absolute;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+    }
+    &__content {
+        padding: 60px 0px;
+    }
+    &--fadein {
+        $anim-time: 1.5s;
+        -webkit-animation: fadein $anim-time ease-in;
+        /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein $anim-time ease-in;
+        /* Firefox < 16 */
+        -ms-animation: fadein $anim-time ease-in;
+        /* Internet Explorer */
+        -o-animation: fadein $anim-time ease-in;
+        /* Opera < 12.1 */
+        animation: fadein $anim-time ease-in;
+    }
+    &--primary {
+        background-color: $primary;
+        color: $primary-compliment;
+    }
+}
+
+@keyframes fadein {
+    from {
+        background-color: rgba(0, 0, 0, 1)
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.70);
+    }
+}
+
+/* Firefox < 16 */
+
+@-moz-keyframes fadein {
+    from {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+
+@-webkit-keyframes fadein {
+    from {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+}
+
+/* Internet Explorer */
+
+@-ms-keyframes fadein {
+    from {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+}
+
+/* Opera < 12.1 */
+
+@-o-keyframes fadein {
+    from {
+        background-color: rgba(0, 0, 0, 0.75);
+    }
+    to {
+        background-color: rgba(0, 0, 0, 0.45);
+    }
+}

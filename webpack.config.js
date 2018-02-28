@@ -31,16 +31,15 @@ module.exports = function init() {
     };
 
     config.module = {
-        rules: [
-            {
+        rules: [{
                 test: /\.scss$/,
                 use: ExtractTextPlugin.extract({
                     fallback: 'style-loader',
-                    use: [
-                        {
+                    use: [{
                             loader: 'css-loader',
                             options: {
-                                sourceMap: true
+                                sourceMap: true,
+                                minimize: true
                             }
                         },
                         {
@@ -82,7 +81,9 @@ module.exports = function init() {
 
     config.watch = true;
     config.plugins = [
-        new ExtractTextPlugin({ filename: outputFile + '.css' }),
+        new ExtractTextPlugin({
+            filename: outputFile + '.css'
+        }),
         new HtmlWebpackPlugin()
     ];
 

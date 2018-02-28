@@ -1,0 +1,68 @@
+section {}
+
+.screen-content {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.page-backdrop {
+    position: fixed;
+    text-align: center;
+    margin: 0;
+    width: 100%;
+    img {
+        width: 100%;
+        height: 100%;
+    }
+    opacity: 0.05;
+}
+
+.page-content,
+.page-content-ruler {
+    max-width: $content-width;
+    margin: 0 auto;
+    @include responsive("desktop-wide", min) {
+        max-width: $super-xl-width;
+    }
+}
+
+.page-content {
+    position: relative;
+    margin: 0 auto;
+    padding: 50px 0px;
+}
+
+.page-content-expanded {
+    padding-top: 150px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.page-section {
+    display: block;
+}
+
+.page-section-inverse {
+    background-color: $tertiary-grey;
+    color: white;
+}
+
+.map-section {
+    margin-top: 50px;
+    margin-bottom: 0px;
+}
+
+.feature {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.margin-bottom-medium {
+    margin-bottom: 75px;
+}
+
+.margin-top-bottom-medium {
+    margin-top: 75px;
+    margin-bottom: 75px;
+}

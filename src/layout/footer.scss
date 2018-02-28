@@ -1,0 +1,55 @@
+footer {
+    background-color: $set-grey;
+    position: relative;
+    color: $secondary-grey;
+    height: auto;
+}
+
+.company-signature {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 20px;
+    ul {
+        text-align: right;
+        flex: 1;
+        align-self: center;
+        li {
+            display: inline-block;
+            padding: 5px;
+            border-right: 1px solid $set-light;
+        }
+        li:last-child {
+            border-right: none;
+        }
+    }
+    @include responsive("tablet-wide", max) {
+        flex-direction: column;
+        &,
+        ul {
+            text-align: center
+        }
+        ;
+    }
+}
+
+.company-footer {
+    border-top: 1px solid #737373; // padding: 30px 0 50px 0;
+}
+
+.footer-social-icons {
+    height: 80px;
+    float: right;
+    li {
+        display: inline;
+    }
+}
+
+.footer-brand {
+    min-height: 150px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    text-align: center;
+    img {
+        width: 200px;
+    }
+}

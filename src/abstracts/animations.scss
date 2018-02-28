@@ -1,0 +1,47 @@
+
+@keyframes fadein {
+	from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari and Chrome */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Internet Explorer */
+@-ms-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Opera */
+@-o-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+
+@keyframes radar-pulse {
+	1% {
+		width: 51px;
+		height: 51px;
+		margin-left: -25.5px;
+		margin-top: -25.5px;
+		border-color: #4abcff;
+	}
+	100% {
+		width: 800px;
+		height: 800px;
+		margin-left: -400px;
+		margin-top: -400px;
+		border-color: rgba(0, 0, 0, 0);
+	}
+}
