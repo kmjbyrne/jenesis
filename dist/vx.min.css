@@ -1,0 +1,33 @@
+.c-slideshow {
+  width: 100%;
+  height: 100%;
+  position: relative; }
+  .c-slideshow__slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: opacity 500ms linear;
+    transition: opacity 500ms linear; }
+  .c-slideshow .c-slideshow__next__btn, .c-slideshow .c-slideshow__prev__btn {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px; }
+  .c-slideshow__next {
+    position: absolute;
+    right: 0; }
+  .c-slideshow__next__btn {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg); }
+  .c-slideshow__prev__btn {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg); }
+  .c-slideshow > .c-slideshow__slide:first-child {
+    opacity: 1; }
+  .container {
+  position: relative;
+  height: 300px;
+  width: 500px; }
+
+/*# sourceMappingURL=vx.min.css.map*/

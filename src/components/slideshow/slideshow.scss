@@ -1,0 +1,41 @@
+.c-slideshow {
+	width: 100%;
+	height: 100%;
+	position: relative;
+
+	&__slide {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		opacity: 0;
+		transition: opacity 500ms linear;
+	}
+
+	%arrow {
+		border: solid black;
+		border-width: 0 3px 3px 0;
+		display: inline-block;
+		padding: 3px;
+	}
+
+	&__next {
+		position: absolute;
+		right: 0;
+	}
+
+	&__next__btn {
+		@extend %arrow;
+		transform: rotate(-45deg);
+		-webkit-transform: rotate(-45deg);
+	}
+
+	&__prev__btn {
+		@extend %arrow;
+		transform: rotate(135deg);
+		-webkit-transform: rotate(135deg);
+	}
+	
+	& > &__slide:first-child {
+		opacity: 1;
+	}
+}
