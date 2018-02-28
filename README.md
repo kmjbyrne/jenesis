@@ -1,3 +1,7 @@
+
+![license](https://img.shields.io/github/license/mashape/apistatus.svg)
+
+
 # vedux
 Vedux JavaScript and Style Library
 
