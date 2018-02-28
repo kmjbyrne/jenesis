@@ -11,7 +11,6 @@ describe('Slideshow UI Component', () => {
     beforeEach(function() {
         let element = document.createElement('div');
         element.dataset.vs = 'slide';
-        element.dataset.delay = 1000;
 
         for (let i = 0; i < 4; i++) {
             let childrenSlides = document.createElement('div');
@@ -45,20 +44,26 @@ describe('Slideshow UI Component', () => {
         expect(this.instance.slides[0].className).toBe('c-slideshow__slide');
     });
 
+    it('Should have correctly defined event listeners', function() {
+        let shift = jasmine.createSpy().and.callFake(function() {
+            return false;
+        });
+    });
+
     it('Should perform slideTo and adjust image indices', function() {
         expect(this.instance.index).toBe(0);
     });
 
     it('Should perform action updates on slides with interval', function() {
         expect(this.instance.index).toBe(0);
-        setInterval(function() {
+        setTimeout(function() {
             timerCallback();
         });
 
         expect(timerCallback).not.toHaveBeenCalled();
 
         this.instance.action();
-        jasmine.clock().tick(this.instance.delay);
+        jasmine.clock().tick(1000);
         expect(this.instance.index).toBe(1);
         jasmine.clock().tick(this.instance.delay);
         expect(this.instance.index).toBe(2);
