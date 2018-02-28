@@ -6,7 +6,13 @@
 # vedux
 Vedux JavaScript and Style Library
 
+## Status
+
+Initial development and set ups
+
 ## How to use it?
+
+*Todo
 
 ### Basic usage
 
