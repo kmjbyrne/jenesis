@@ -1,0 +1,29 @@
+.c-parallax {
+    position: relative;
+    overflow: hidden;
+    &__container {
+        height: auto;
+        position: relative;
+        overflow: hidden;
+    }
+    &__image-container {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+    }
+    &__image {
+        z-index: -1;
+        width: 100%;
+    }
+    &__content {
+        position: relative;
+        width: 100%;
+        padding: 100px 0px;
+    }
+    &--darkground {
+        background-color: rgba(0, 0, 0, 0.60);
+    }
+    padding: 75px 0px 0px;
+    margin-bottom: 0px;
+}

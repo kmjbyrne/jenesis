@@ -2,5 +2,6 @@
 .vscode/
 .sass-cache/
 .idea/
+coverage/
 
 node_modules/

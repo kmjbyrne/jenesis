@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
-  <head>
+
+<head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
-  <link href="vx.min.css" rel="stylesheet"></head>
-  <body>
+    <link href="coradel.min.css" rel="stylesheet">
+</head>
+
+<body>
     <div class="container">
-      <div class="c-slideshow" id="home-slider" data-vx="slide" data-delay="1500">
-          <div class="c-slideshow__slide" src="a.jpeg">TEST1</div>
-          <div class="c-slideshow__slide" src="b.jpg">TEST2</div>
-          <div class="c-slideshow__slide" src="c.jpg">TEST3</div>
-          <div class="c-slideshow__slide" src="d.jpg">TEST4</div>
-          <a class="c-slideshow__next"><span class="c-slideshow__next__btn"></span></a>
-          <a class="c-slideshow__prev"><span class="c-slideshow__prev__btn"></span></a>
-      </div>
+        <div class="c-slideshow" id="home-slider" data-coradel="slide" data-delay="1500">
+            <div class="c-slideshow__slide" src="a.jpeg">TEST1</div>
+            <div class="c-slideshow__slide" src="b.jpg">TEST2</div>
+            <div class="c-slideshow__slide" src="c.jpg">TEST3</div>
+            <div class="c-slideshow__slide" src="d.jpg">TEST4</div>
+            <a class="c-slideshow__next"><span class="c-slideshow__next__btn"></span></a>
+            <a class="c-slideshow__prev"><span class="c-slideshow__prev__btn"></span></a>
+        </div>
     </div>
-  <script type="text/javascript" src="vx.min.js"></script></body>
+    <div class="container">
+        <div class="c_parallax" data-coradel="parallax"></div>
+    </div>
+    <script type="text/javascript" src="coradel.min.js"></script>
+</body>
+
 </html>

@@ -1,5 +1,6 @@
 
 ![build](https://travis-ci.org/kmjbyrne/vedux.svg?branch=master)
+[![npm version](https://badge.fury.io/js/coradel.svg)](https://badge.fury.io/js/coradel)
 ![license](https://img.shields.io/github/license/mashape/apistatus.svg)
 
 

@@ -1,12 +1,16 @@
-import { Slideshow } from './components/slideshow';
+import {
+    Slideshow
+} from './components/slideshow';
+import {
+    Parallax
+} from './components/parallax';
 import './main.scss';
 
 const init = (() => {
-    let x = new Slideshow();
-    console.log('Test');
-    return x;
+    let slideshow = new Slideshow();
+    let parallax = new Parallax();
 })();
 
-module.exports = { 
-    init 
+! function() {
+    init();
 };

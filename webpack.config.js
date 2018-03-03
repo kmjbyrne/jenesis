@@ -1,7 +1,7 @@
 // Helper: root() is defined at the bottom
 var path = require('path');
 var webpack = require('webpack');
-var libName = 'vx';
+var libName = 'coradel';
 var outputFile = libName + '.min';
 
 var env = process.env.NODE_ENV;
@@ -20,7 +20,7 @@ module.exports = function init() {
     config.output = {
         path: root('dist/'),
         filename: outputFile + '.js',
-        library: 'Vx',
+        library: 'Coradel',
         libraryTarget: 'umd',
         umdNamedDefine: true
     };

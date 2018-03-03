@@ -73,6 +73,7 @@ export const Slideshow = (() => {
 
     const COMPONENT_NAME = 'slideshow'
     const VERSION = '0.0.1'
+    const SELECTOR = "[data-coradel='slide']"
 
     const defaults = {
         delay: 5000
@@ -82,7 +83,7 @@ export const Slideshow = (() => {
         constructor(element, iife = true) {
             this.instances = []
             if (iife) {
-                this.elements = document.querySelectorAll("[data-vx='slide']");
+                this.elements = document.querySelectorAll(SELECTOR);
             } else {
                 this.elements = element;
             }

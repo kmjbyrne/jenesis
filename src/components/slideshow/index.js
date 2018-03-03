@@ -1,1 +1,4 @@
-export { Slideshow } from './slideshow';
+export {
+    Slideshow
+}
+from './slideshow';
