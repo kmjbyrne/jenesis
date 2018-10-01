@@ -5,10 +5,10 @@
 
 # Under Construction
 
-# Core Fusion
-Core Fusion
+# Snap - UI
+Snap - UI
 
-Core Fusion is a small, lightweight JS and CSS library intended for small, infographical websites. The initial motivation was to support Flask/Jinja frontends and create a base from which projects could be derived from and brought to full design and deployment quickly and easily. 
+Snap - UI is a small, lightweight JS and CSS library intended for small, infographical websites. The initial motivation was to support Flask/Jinja frontends and create a base from which projects could be derived from and brought to full design and deployment quickly and easily. 
 
 For example, simple cases where larger frameworks were too bloated and more difficult to work with than simply writing ground up, vanilla JavaScript and CSS this library works well.
 
