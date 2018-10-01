@@ -1,9 +1,20 @@
+@import "./components/cards/cards";
+
 @import "./abstracts/index";
 @import "./components/slideshow/slideshow";
+@import "./components/button/button";
 @import "./components/dropdowns";
 @import "./layout/index";
+
+
+body,
+html {
+    height: 100%;
+    width: 100%;
+    font-family: "Roboto";
+}
+
 .container {
     position: relative;
-    height: 500px;
-    width: 500px;
+    width: auto;
 }

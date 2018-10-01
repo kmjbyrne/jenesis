@@ -1,0 +1,136 @@
+.ui-card {
+    width: auto;
+    // max-width: 768px;
+    margin: 50px auto;
+    position: relative;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    // padding: 20px;
+    box-shadow: 3px 3px 3px #eee;
+    display: flex;
+    text-align: left;
+
+    &__wrapper {
+        width: 100%;
+    }
+
+    &__content {
+        // width: 450px;
+    }
+
+    &__vertical {
+        display: flex;
+        flex-direction: row;
+    }
+
+    &__guide {
+        display: flex;
+        list-style: none;
+        margin-bottom: 20px;
+        border-bottom: 1px solid #ddd;
+        margin-top: -3px;
+    }
+
+    &__heading {
+        margin-bottom: -1px;
+    }
+
+    &__link {
+        font-size: 1rem;
+        display: block;
+        padding: 10px 20px 10px 20px;
+        border-top: 3px solid transparent;
+        margin-bottom: 0px;
+        border-radius: 0px;
+        color: lighten(black, 75%);
+        transition: 100ms border ease;
+        font-style: italic;
+        pointer: mouse;
+
+        &:hover {
+            margin-bottom: 0;
+            border: 1px solid #ccc;
+            border-bottom-color: white;
+            border-top: 3px solid #2C3539;
+        }
+    }
+
+    &__heading+&__heading {
+        // margin-left: 20px;
+        // padding: 10px 20px 10px 20px;
+    }
+
+    &__content {
+        font-size: 1rem;
+        display: flex;
+        position: relative;
+        min-height: 100px;
+        height: auto;
+    }
+
+    &__group {
+        position: absolute;
+        top: 1;
+        opacity: 0;
+        margin-bottom: 15px;
+        transition: 1s;
+        // transform: translate3d(300px, 0px, 0px);
+    }
+
+    &__feature {
+        padding: 20px 20px;
+        left: 200px;
+        font-size: 3rem;
+        transform: translateX(-70px);
+        background-color: #2C3539;
+        border: 1px solid #2C3539;
+        color: white;
+        border-radius: 10px;
+        align-self: center;
+        box-shadow: 2px 2px 2px #2C3539;
+    }
+
+    &--animated-feature {
+        animation-name: pulsated;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+    }
+
+    &--visible {
+        opacity: 1;
+        transform: translate3d(0px, 0px, 0px);
+    }
+
+    &--vertical {
+        // flex-direction: column;
+    }
+
+    &--active {
+        margin-bottom: 0;
+        border: 1px solid #ccc;
+        border-bottom-color: white;
+        border-top: 3px solid #2C3539;
+        border-radius: 0px;
+        font-weight: 500;
+        color: black;
+        font-style: normal;
+        box-shadow: 0px 0px -2px 0px #ccc;
+    }
+}
+
+@keyframes pulsated {
+    0% {
+        transform: scale(1);
+        box-shadow: 2px 5px 2px #2C3539;
+    }
+
+    50% {
+        transform: scale(1.15);
+        box-shadow: 3px 10px 5px #2C3539;
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 2px 2px 2px #2C3539;
+    }
+}

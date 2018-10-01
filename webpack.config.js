@@ -1,7 +1,7 @@
 // Helper: root() is defined at the bottom
 var path = require('path');
 var webpack = require('webpack');
-var libName = 'coradel';
+var libName = 'snap-ui';
 var outputFile = libName + '.min';
 
 var env = process.env.NODE_ENV;
@@ -73,7 +73,7 @@ module.exports = function init() {
                 loader: 'babel-loader',
                 exclude: path.resolve(__dirname, 'node_modules'),
                 options: {
-                    presets: ['es2015']
+                    presets: ["@babel/preset-env"]
                 }
             }
         ]

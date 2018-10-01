@@ -1,10 +1,23 @@
-export class Component {
+import BaseComponent from '../base';
+import DomHelper from '../helper';
+
+const Slideshow = (() => {
+    const componentName = 'ui-slideshow';
+    let init = (node) => new SlideshowComponent(node);
+    DomHelper.init(componentName, init);
+})()
+
+
+export class SlideshowComponent extends BaseComponent {
+    componentName = 'slideshow';
+
     constructor(element) {
+        super({});
         this.element = element;
 
-        this.slides = this.element.querySelectorAll(".c-slideshow__slide");
-        this.previous = this.element.querySelector(".c-slideshow__prev");
-        this.next = this.element.querySelector(".c-slideshow__next");
+        this.slides = this.select("slideshow__slide", this.element);
+        this.previous = this.selectOne("slideshow__prev", this.element);
+        this.next = this.selectOne("slideshow__next", this.element);
 
         let shift = (nextOrPrev) => {
             let slideLength = this.slides.length - 1;
@@ -34,6 +47,8 @@ export class Component {
         this.total = this.slides.length;
         this.timer = null;
         this.delay = this.element.dataset.delay || 1000;
+
+        this.action();
     }
 
     _slideTo(slideIndex) {
@@ -68,46 +83,3 @@ export class Component {
         }, false);
     }
 }
-
-export const Slideshow = (() => {
-
-    const COMPONENT_NAME = 'slideshow'
-    const VERSION = '0.0.1'
-    const SELECTOR = "[data-coradel='slide']"
-
-    const defaults = {
-        delay: 5000
-    }
-
-    class Slideshow {
-        constructor(element, iife = true) {
-            this.instances = []
-            if (iife) {
-                this.elements = document.querySelectorAll(SELECTOR);
-            } else {
-                this.elements = element;
-            }
-            this.init();
-        }
-
-        init() {
-            if (this.elements) {
-                for (let i = 0; i < this.elements.length; i++) {
-                    this.instances.push(new Component(this.elements[i]));
-                }
-            } else {
-                this.instances = [new Component(this.elements)];
-            }
-            this.start();
-        }
-
-        start() {
-            for (let i = 0; i < this.instances.length; i++) {
-                this.instances[i].action();
-            }
-        }
-
-    }
-
-    return Slideshow;
-})();

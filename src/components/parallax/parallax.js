@@ -1,29 +1,28 @@
-export const Parallax = (() => {
-    const COMPONENT_NAME = 'slideshow'
-    const VERSION = '0.0.1'
-    const SELECTOR = "[data-coradel='parallax']"
+import BaseComponent from '../base';
+import DomHelper from '../helper';
 
-    class Parallax {
+const Parallax = (() => {
+    const componentName = 'ui-parallax';
+    let init = (node) => new ParallaxComponent(node);
+    DomHelper.init(componentName, init);
+})()
 
-        constructor() {
-            console.log(SELECTOR);
-            this.elements = document.querySelectorAll(SELECTOR);
-            this.count = this.elements.length;
-            console.log(this.elements);
-            this.init();
-        }
+class ParallaxComponent extends BaseComponent {
 
-        init() {
-            window.onscroll = () => {
-                window.requestAnimationFrame(() => {
-                    for (let i = 0; i < this.count; i++) {
-                        let currentElement = this.elements[i];
-                        let scrolled = window.scrollY - 1950;
-                        currentElement.style.transform = 'translate3d(0, ' + scrolled * -0.3 + 'px, 0)';
-                    }
-                });
-            };
-        }
+    constructor(element) {
+        super({});
+        this.element = element;
+
+        console.log(this.elements);
+        this.init();
     }
-    return Parallax;
-})();
+
+    init() {
+        window.onscroll = () => {
+            window.requestAnimationFrame(() => {
+                let scrolled = window.scrollY - 1950;
+                this.element.style.transform = 'translate3d(0, ' + scrolled * -0.3 + 'px, 0)';
+            });
+        };
+    }
+}

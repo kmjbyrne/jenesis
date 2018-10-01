@@ -4,24 +4,138 @@
 <head>
     <meta charset="UTF-8">
     <title>Webpack App</title>
-    <link href="coradel.min.css" rel="stylesheet">
+    <link href="snap-ui.min.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 </head>
 
 <body>
     <div class="container">
-        <div class="c-slideshow" id="home-slider" data-coradel="slide" data-delay="1500">
-            <div class="c-slideshow__slide" src="a.jpeg">TEST1</div>
-            <div class="c-slideshow__slide" src="b.jpg">TEST2</div>
-            <div class="c-slideshow__slide" src="c.jpg">TEST3</div>
-            <div class="c-slideshow__slide" src="d.jpg">TEST4</div>
-            <a class="c-slideshow__next"><span class="c-slideshow__next__btn"></span></a>
-            <a class="c-slideshow__prev"><span class="c-slideshow__prev__btn"></span></a>
+        <div class="ui-card" data-type="tabbed">
+            <div class="ui-card__feature">
+                <span class="fa fa-graduation-cap ui-card--animated-feature"></span>
+            </div>
+            <div class="ui-card__wrapper ui-card--vertical">
+                <div class="ui-card__guide">
+                    <li class="ui-card__heading">
+                        <a class="ui-card__link">Inclusiveness</a>
+                    </li>
+                    <li class="ui-card__heading">
+                        <a class="ui-card__link">Respect</a>
+                    </li>
+                    <li class="ui-card__heading">
+                        <a class="ui-card__link">Diversity</a>
+                    </li>
+                    <li class="ui-card__heading">
+                        <a class="ui-card__link">Amazing</a>
+                    </li>
+                </div>
+                <div class="ui-card__content">
+                    <div class="ui-card__group">
+                        <p>This is some data then befdgsjkfbgksjdbgsmdjbgskdjgsdfglow the title.</p>
+                    </div>
+                    <div class="ui-card__group">
+                        <p>And then more data is added to the panels here</p>
+                    </div>
+                    <div class="ui-card__group">
+                        <p>Sometimes the data is nicer when displayed in this format</p>
+                    </div>
+                    <div class="ui-card__group">
+                        <p>In place slideshows kinda look cool</p>
+                    </div>
+                </div>
+            </div>
         </div>
+
+        <div class="container">
+            <h1>Snap UI Components - Button</h1>
+
+            <h3>Basic Buttons</h3>
+            <button class="ui-button">Click me!</button>
+            <button class="ui-button">
+                <span class="ui-button__icon ui-button__icon--right fa fa-plus"></span>Click me!
+            </button>
+            <button class="ui-button">
+                <span class="ui-button__icon fa fa-plus"></span>Click me!
+            </button>
+
+            <h3>Round Icon Button</h3>
+            <button class="ui-button-round">
+                <span class="ui-button__icon ui-button__icon fa fa-plus"></span>
+            </button>
+            <button class="ui-button-round">
+                <span class="ui-button__icon ui-button__icon fa fa-eye"></span>
+            </button>
+            <button class="ui-button-round">
+                <span class="ui-button__icon ui-button__icon fa fa-minus"></span>
+            </button>
+
+            <h3>Submit (Event) Button</h3>
+            <button class="ui-button">
+                <span class="ui-button__icon ui-button__icon--right fa fa-paper-plane"></span>Submit
+            </button>
+
+        </div>
+
+        <div class="ui-slideshow">
+            <div class="ui-slideshow__slide">Test</div>
+            <div class="ui-slideshow__slide">Test2</div>
+            <div class="ui-slideshow__slide">Test3</div>
+            <div class="ui-slideshow__slide">Test4</div>
+            <a class="ui-slideshow__next"><span class="ui-slideshow__next__btn"></span></a>
+            <a class="ui-slideshow__prev"><span class="ui-slideshow__prev__btn"></span></a>
+        </div>
+
+        <div class="ui-slideshow">
+            <div class="ui-slideshow__slide">Test</div>
+            <div class="ui-slideshow__slide">Test2</div>
+            <div class="ui-slideshow__slide">Test3</div>
+            <div class="ui-slideshow__slide">Test4</div>
+            <a class="ui-slideshow__next"><span class="ui-slideshow__next__btn"></span></a>
+            <a class="ui-slideshow__prev"><span class="ui-slideshow__prev__btn"></span></a>
+        </div>
+
+        <div class="ui-slideshow">
+            <div class="ui-slideshow__slide">Test</div>
+            <div class="ui-slideshow__slide">Test2</div>
+            <div class="ui-slideshow__slide">Test3</div>
+            <div class="ui-slideshow__slide">Test4</div>
+            <a class="ui-slideshow__next"><span class="ui-slideshow__next__btn"></span></a>
+            <a class="ui-slideshow__prev"><span class="ui-slideshow__prev__btn"></span></a>
+        </div>
+
+        <form class="ui-form ui-form--vertical" data-url="/contact" data-method="POST">
+            <div class="ui-form__group">
+                <label for="name">First Name</label>
+                <input class="ui-form__field" type="text" name="forename" id="forename" required>
+            </div>
+            <div class="ui-form__group">
+                <label for="surname">Surname</label>
+                <input class="ui-form__field" type="text" name="surname" id="surname" required>
+            </div>
+            <div class="ui-form__group">
+                <label for="contact">Email or Phone</label>
+                <input class="ui-form__field" type="text" name="contact" id="contact" required>
+            </div>
+            <div class="ui-form__group">
+                <label for="category">Nature of your Inquiry</label>
+                <select class="ui-form__field" name="category" id="category">
+                    <option value="enrollment">Enrollment</option>
+                    <option value="classes">Classes</option>
+                    <option value="general" selected>General</option>
+                </select>
+            </div>
+            <div class="ui-form__group">
+                <label for="message">Message</label>
+                <textarea class="ui-form__field" name="message" id="message" required></textarea>
+            </div>
+            <div class="ui-form__group ui-button">
+                <button class="ui-button__item ui-button--fill plash-effect">Send</button>
+            </div>
+        </form>
+
     </div>
-    <div class="container">
-        <div class="c_parallax" data-coradel="parallax"></div>
-    </div>
-    <script type="text/javascript" src="coradel.min.js"></script>
+    <script type="text/javascript" src="snap-ui.min.js"></script>
 </body>
 
 </html>

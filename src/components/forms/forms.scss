@@ -1,0 +1,54 @@
+.ui-form {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.2rem;
+
+    &__group {
+        width: 100%;
+        margin: 0px 15px;
+
+        @include responsive("tablet-wide", max) {
+            margin: 0px 0px;
+        }
+    }
+
+    &__field {
+        height: 100%;
+        padding: 15px 0px 15px 20px;
+        -webkit-box-flex: 1;
+        -ms-flex: 1;
+        flex: 1;
+        border: 1px solid lighten($tertiary-inverse, 60%);
+        max-width: 100%;
+        width: 100%;
+        min-width: 100%;
+    }
+
+    @include responsive("tablet-wide", max) {
+        flex-direction: column;
+
+        &__field {
+            padding: 20px 0px 20px 20px;
+            margin: 5px 0px;
+        }
+    }
+
+    &__heading {
+        color: $tertiary-color;
+        margin: 0px 0px 50px 0px;
+    }
+
+    &--dark &__field {
+        color: white;
+        background-color: lighten($tertiary-inverse, 10%);
+        border: 1px solid $tertiary-inverse;
+    }
+
+    &--vertical {
+        flex-direction: column;
+    }
+
+    &--vertical &__group {
+        margin: 0 0 2rem;
+    }
+}

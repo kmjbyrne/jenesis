@@ -1,0 +1,99 @@
+@keyframes ripple {
+    0% {
+        transform: scale(0);
+    }
+
+    20% {
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1);
+    }
+}
+
+$background: #2C3539;
+
+.ui-button {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    border: none;
+    display: inline-block;
+    outline: none !important;
+    background-color: $background;
+    text-align: center;
+    letter-spacing: .5px;
+    -webkit-transition: background-color .2s ease-out;
+    transition: background-color .2s ease-out;
+    cursor: pointer;
+    overflow: hidden;
+    padding: 0px 20px;
+    box-shadow: 2px 2px 6px 1px #bbb;
+    text-decoration: none;
+    line-height: 40px;
+    border-radius: 3px;
+
+    &-round {
+        @extend .ui-button;
+        border-radius: 100px;
+        height: 50px;
+        width: 50px;
+        padding: 0px;
+    }
+
+    &-round &__icon {
+        margin-right: 0px;
+    }
+
+    &__icon {
+        margin-right: 15px;
+        line-height: inherit;
+
+        &--right {
+            float: right;
+            margin-right: 0px;
+            margin-left: 15px;
+        }
+    }
+
+    &:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        width: 150px;
+        height: 150px;
+        margin-left: -75px;
+        margin-top: -75px;
+        background: lighten($background, 25%);
+        border-radius: 100%;
+        opacity: .6;
+        transform: scale(0);
+    }
+
+    transition: 250ms;
+
+    &:not(:active):after {
+        animation: ripple 1s ease-out;
+    }
+
+    &:hover {
+        box-shadow: 2px 2px 15px 1px #bbb;
+    }
+
+    &:active {
+        background-color: lighten($background, 5%);
+        box-shadow: 2px 2px 15px 1px #bbb;
+    }
+
+    &:after {
+        visibility: hidden;
+    }
+
+    &:focus:after {
+        visibility: visible;
+    }
+}
