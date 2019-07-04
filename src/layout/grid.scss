@@ -1,0 +1,40 @@
+.sui-container {
+    max-width: 1140px;
+    margin: 0 auto;
+}
+
+.sui-row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+// Auto flex align
+.sui-col {
+    flex: 1;
+}
+
+.sui-col-3 {
+    width: 33%;
+}
+
+.col-md-1,
+.col-md-2,
+.col-md-3,
+.col-md-4,
+.col-md-5,
+.col-md-6,
+.col-md-7,
+.col-md-8,
+.col-md-9,
+.col-md-10,
+.col-md-11,
+.col-md-12 {}
+
+.space-between {
+    justify-content: space-between;
+}
+
+.space-around {
+    justify-content: space-around;
+}

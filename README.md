@@ -8,7 +8,7 @@
 # Snap - UI
 Snap - UI
 
-Snap - UI is a small, lightweight JS and CSS library intended for small, infographical websites. The initial motivation was to support Flask/Jinja frontends and create a base from which projects could be derived from and brought to full design and deployment quickly and easily. 
+Snap - UI is a small, lightweight JS and CSS library intended for small, infographical websites. The initial motivation was to support Flask/Jinja frontends and create a base from which projects could be derived from and brought to full design and deployment quickly and easily.
 
 For example, simple cases where larger frameworks were too bloated and more difficult to work with than simply writing ground up, vanilla JavaScript and CSS this library works well.
 
@@ -24,4 +24,3 @@ Initial development and set ups
 ### Basic usage
 
 The library consists of a number of BEM designed components. Usage is simple and there are multiple installation methods.
-

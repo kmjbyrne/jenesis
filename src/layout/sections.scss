@@ -11,21 +11,15 @@ section {}
     text-align: center;
     margin: 0;
     width: 100%;
+
     img {
         width: 100%;
         height: 100%;
     }
+
     opacity: 0.05;
 }
 
-.page-content,
-.page-content-ruler {
-    max-width: $content-width;
-    margin: 0 auto;
-    @include responsive("desktop-wide", min) {
-        max-width: $super-xl-width;
-    }
-}
 
 .page-content {
     position: relative;

@@ -5,16 +5,3 @@
 @import "./components/button/button";
 @import "./components/dropdowns";
 @import "./layout/index";
-
-
-body,
-html {
-    height: 100%;
-    width: 100%;
-    font-family: "Roboto";
-}
-
-.container {
-    position: relative;
-    width: auto;
-}

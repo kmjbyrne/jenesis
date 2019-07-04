@@ -2,6 +2,7 @@ import BaseComponent from '../base';
 import DomHelper from '../helper';
 
 const Card = (() => {
+    console.log('Init UI Cards');
     const componentName = 'ui-card';
 
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -76,12 +77,12 @@ class CardComponent extends BaseComponent {
             });
 
             elem.addEventListener("mouseover", () => {
-                this.changeLink(index);
-                this.pause();
+                //this.changeLink(index);
+                //this.pause();
             });
 
             elem.addEventListener("mouseout", () => {
-                this.restartAction();
+                //this.restartAction();
             });
         }
     }

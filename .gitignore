@@ -7,3 +7,12 @@ coverage/
 
 node_modules/
 .vscode/launch.json
+
+.DS_Store
+.vscode/
+node_modules/
+/node_modules
+
+dist/
+coverage/
+.npmrc
