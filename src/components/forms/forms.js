@@ -6,14 +6,15 @@ const Forms = (() => {
     const componentName = 'ui-form';
     let init = (node) => new FormComponent(node);
     DomHelper.init(componentName, init);
-})()
+})();
 
 class FormComponent extends BaseComponent {
     METHOD_KEY = 'data-method';
     URL_KEY = 'data-url';
 
     constructor(element) {
-        super({});
+        super(
+            {});
         this.element = element;
         this.method = this.element.getAttribute(this.METHOD_KEY);
         this.url = this.element.getAttribute(this.URL_KEY);
@@ -24,7 +25,7 @@ class FormComponent extends BaseComponent {
         let fields = this.select('form__field', this.element);
         this.data = {};
         for (let i = 0; i < fields.length; i++) {
-            this.data[fields[i].name] = fields[i].value
+            this.data[fields[i].name] = fields[i].value;
         }
         console.log(this.data);
     }
@@ -51,7 +52,8 @@ class FormComponent extends BaseComponent {
 
             if (this.method.toLowerCase() == 'GET'.toLowerCase()) {
                 console.log(HttpUtil.get(this.url));
-            } else if (this.method.toLowerCase() == 'POST'.toLowerCase()) {
+            }
+            else if (this.method.toLowerCase() == 'POST'.toLowerCase()) {
                 console.log(HttpUtil.post(this.url, this.data));
             }
             event.stopImmediatePropagation();

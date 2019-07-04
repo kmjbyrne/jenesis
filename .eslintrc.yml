@@ -25,4 +25,5 @@ rules:
   semi:
     - error
     - always
+  brace-style: [2, 'stroustrup', {"allowSingleLine": true}]
   lines-between-class-members: [error, always, { exceptAfterSingleLine: true }]
