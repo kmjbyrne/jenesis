@@ -13,8 +13,6 @@ module.exports = function init() {
     config.output = {
         path: path.resolve(__dirname, './dist'),
         filename: '[name].bundle.js',
-        // library: 'AmzUi',
-        // libraryTarget: 'umd'
     };
     config.resolve = {
         extensions: ['.ts', '.js', '.css', '.scss', '.html', '.json']

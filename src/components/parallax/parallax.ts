@@ -1,5 +1,5 @@
-import BaseComponent from '../base';
-import DomHelper from '../helper';
+import { UiComponent } from '../base.component';
+import { DomHelper } from '../helper';
 
 const Parallax = (() => {
     const componentName = 'ui-parallax';
@@ -7,10 +7,14 @@ const Parallax = (() => {
     DomHelper.init(componentName, init);
 })()
 
-class ParallaxComponent extends BaseComponent {
+export class ParallaxComponent extends UiComponent {
+    element: any;
+    elements(elements: any) {
+        throw new Error("Method not implemented.");
+    }
 
     constructor(element) {
-        super({});
+        super();
         this.element = element;
 
         console.log(this.elements);

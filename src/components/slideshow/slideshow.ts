@@ -1,5 +1,5 @@
-import BaseComponent from '../base';
-import DomHelper from '../helper';
+import { UiComponent } from '../base.component';
+import { DomHelper } from '../helper';
 
 const Slideshow = (() => {
     const componentName = 'ui-slideshow';
@@ -8,11 +8,25 @@ const Slideshow = (() => {
 })()
 
 
-export class SlideshowComponent extends BaseComponent {
+export class SlideshowComponent extends UiComponent {
+    select(arg0: string, element: any): any {
+        throw new Error("Method not implemented.");
+    }
+    selectOne(arg0: string, element: any): any {
+        throw new Error("Method not implemented.");
+    }
     componentName = 'slideshow';
+    element: any;
+    slides: any;
+    previous: any;
+    next: any;
+    index: number;
+    total: any;
+    timer: any;
+    delay: any;
 
     constructor(element) {
-        super({});
+        super();
         this.element = element;
 
         this.slides = this.select("slideshow__slide", this.element);

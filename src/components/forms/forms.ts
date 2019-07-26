@@ -1,6 +1,6 @@
-import { UiParentComponent } from './../../parent.component';
-import { DomHelper } from '../../helper';
-import HttpUtil from '../../utils/http';
+import { UiParentComponent } from '../parent.component';
+import { DomHelper } from '../helper';
+import { HttpUtil } from '../../utils/http';
 
 const Forms = (() => {
     const componentName = 'ui-form';
@@ -8,9 +8,14 @@ const Forms = (() => {
     DomHelper.init(componentName, init);
 })();
 
-class FormComponent extends UiParentComponent {
+export class FormComponent extends UiParentComponent {
     METHOD_KEY = 'data-method';
     URL_KEY = 'data-url';
+
+    element: any;
+    method: any;
+    url: any;
+    data: {};
 
     constructor(element) {
         super();
