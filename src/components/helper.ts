@@ -1,4 +1,4 @@
-export default class DomHelper {
+export class DomHelper {
 
     static init(componentName, init) {
         document.addEventListener("DOMContentLoaded", function(event) {

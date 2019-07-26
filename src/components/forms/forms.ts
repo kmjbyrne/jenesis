@@ -1,5 +1,5 @@
-import BaseComponent from '../base';
-import DomHelper from '../helper';
+import { UiParentComponent } from './../../parent.component';
+import { DomHelper } from '../../helper';
 import HttpUtil from '../../utils/http';
 
 const Forms = (() => {
@@ -8,13 +8,12 @@ const Forms = (() => {
     DomHelper.init(componentName, init);
 })();
 
-class FormComponent extends BaseComponent {
+class FormComponent extends UiParentComponent {
     METHOD_KEY = 'data-method';
     URL_KEY = 'data-url';
 
     constructor(element) {
-        super(
-            {});
+        super();
         this.element = element;
         this.method = this.element.getAttribute(this.METHOD_KEY);
         this.url = this.element.getAttribute(this.URL_KEY);
