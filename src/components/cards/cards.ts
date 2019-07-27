@@ -5,7 +5,7 @@ const Card = (() => {
     console.log('Init UI Cards');
     const componentName = 'ui-card';
 
-    document.addEventListener("DOMContentLoaded", function(event) {
+    document.addEventListener("DOMContentLoaded", function (event) {
         // let base = new CardComponent(componentName);
         let nodes = DomHelper.select(componentName);
         let elements = [];
@@ -23,7 +23,7 @@ export class ComponentProperties {
     visible = 'visible'
     active = 'active'
 
-    constructor() {}
+    constructor() { }
 }
 
 class CardComponent extends UiComponent {
@@ -75,9 +75,6 @@ class CardComponent extends UiComponent {
         setTimeout(() => {
             this.action();
         }, this.RESTART_DELAY);
-    }
-    interval(interval: any) {
-        throw new Error("Method not implemented.");
     }
 
     pause() {

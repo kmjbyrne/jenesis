@@ -2,11 +2,17 @@ import { UiParentComponent } from '../parent.component';
 import { DomHelper } from '../helper';
 import { HttpUtil } from '../../utils/http';
 
-const Forms = (() => {
-    const componentName = 'ui-form';
-    let init = (node) => new FormComponent(node);
-    DomHelper.init(componentName, init);
-})();
+export class FormControlBuilder {
+    static active() {
+        const component = new FormComponent();
+        const nodes = DomHelper.select(component.is());
+        // tslint:disable-next-line: prefer-for-of
+        for (let i = 0; i < nodes.length; i++) {
+            component.init(nodes[i]);
+        }
+        return component;
+    }
+}
 
 export class FormComponent extends UiParentComponent {
     METHOD_KEY = 'data-method';
@@ -17,13 +23,17 @@ export class FormComponent extends UiParentComponent {
     url: any;
     data: {};
 
-    constructor(element) {
+    constructor() {
         super();
+
+    }
+
+    init(element: Element) {
         this.element = element;
         this.method = this.element.getAttribute(this.METHOD_KEY);
         this.url = this.element.getAttribute(this.URL_KEY);
-        this.init();
     }
+
 
     serialize() {
         let fields = this.select('form__field', this.element);
@@ -46,22 +56,5 @@ export class FormComponent extends UiParentComponent {
         setTimeout(() => {
             node.classList.toggle(classStateName);
         }, 3000);
-    }
-
-    init() {
-        this.element.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            console.log(this.serialize());
-
-            if (this.method.toLowerCase() == 'GET'.toLowerCase()) {
-                console.log(HttpUtil.get(this.url));
-            }
-            else if (this.method.toLowerCase() == 'POST'.toLowerCase()) {
-                console.log(HttpUtil.post(this.url, this.data));
-            }
-            event.stopImmediatePropagation();
-            return true;
-        }, false);
     }
 }

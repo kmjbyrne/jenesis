@@ -1,7 +1,7 @@
-import { UIParentControl } from '../control.component';
+import { UiParentControl } from '../control.component';
 import { DomHelper } from '../helper';
 
-export class ToggleButtonControl extends UIParentControl {
+export class ToggleButtonControl extends UiParentControl {
     element: any;
     ACTIVE_STATE = 'open';
     componentName = 'toggle';
@@ -35,7 +35,7 @@ export class ToggleButtonControl extends UIParentControl {
 export class ToggleButtonControlBuilder {
     static active() {
         const component = new ToggleButtonControl();
-        const nodes = DomHelper.select(component.getName());
+        const nodes = DomHelper.select(component.is());
         // tslint:disable-next-line: prefer-for-of
         for (let i = 0; i < nodes.length; i++) {
             component.init(nodes[i]);

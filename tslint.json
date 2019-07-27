@@ -1,21 +1,27 @@
 {
     "extends": "tslint:recommended",
-    "rules": {
+    "rules":
+    {
         "space-before-function-paren": false,
         "array-type": false,
         "arrow-parens": false,
-        "deprecation": {
+        "deprecation":
+        {
             "severity": "warn"
         },
+        "one-line": true,
         "component-class-suffix": true,
         "contextual-lifecycle": true,
         "directive-class-suffix": true,
-
         "import-blacklist": [
             true,
             "rxjs/Rx"
         ],
-        "indent": [true, "spaces", 4],
+        "indent": [
+            true,
+            "spaces",
+            4
+        ],
         "interface-name": false,
         "max-classes-per-file": false,
         "max-line-length": [

@@ -19,6 +19,7 @@ module.exports = function init() {
     config.devtool = 'inline-source-map';
     config.devServer = {
         inline: true,
+        port: 8080,
         contentBase: './dist'
     };
     config.watch = true;
@@ -29,7 +30,7 @@ module.exports = function init() {
         //     hash: true
         // }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src/', 'dashboard.html'),
+            template: path.resolve(__dirname, 'src/', 'index.html'),
             filename: './index.html',
             hash: true
         }),
@@ -40,39 +41,39 @@ module.exports = function init() {
     ];
     config.module = {
         rules: [{
-                test: /\.js$/,
-                loader: 'babel-loader',
-                exclude: path.resolve(__dirname, 'node_modules'),
-                options: {
-                    presets: ['@babel/preset-env']
-                }
-            },
-            {
-                test: /\.tsx?$/,
-                use: 'ts-loader',
-                exclude: path.resolve(__dirname, 'node_modules')
-            },
-            {
-                test: /\.(sa|sc|c)ss$/,
-                use: [{
-                        loader: MiniCssExtractPlugin.loader,
-                        options: {
-                            hmr: true,
-                            reloadAll: true,
-                        },
-                    },
-                    'css-loader', 'postcss-loader', {
-                        loader: 'sass-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    }
-                ],
-            },
-            {
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader'
+            test: /\.js$/,
+            loader: 'babel-loader',
+            exclude: path.resolve(__dirname, 'node_modules'),
+            options: {
+                presets: ['@babel/preset-env']
             }
+        },
+        {
+            test: /\.tsx?$/,
+            use: 'ts-loader',
+            exclude: path.resolve(__dirname, 'node_modules')
+        },
+        {
+            test: /\.(sa|sc|c)ss$/,
+            use: [{
+                loader: MiniCssExtractPlugin.loader,
+                options: {
+                    hmr: true,
+                    reloadAll: true,
+                },
+            },
+                'css-loader', 'postcss-loader', {
+                loader: 'sass-loader',
+                options: {
+                    sourceMap: true
+                }
+            }
+            ],
+        },
+        {
+            test: /\.(png|jpg)$/,
+            loader: 'url-loader'
+        }
         ]
     };
     return config;

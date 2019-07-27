@@ -1,6 +1,6 @@
 import { UiComponent } from './base.component';
 
-export class UIParentControl extends UiComponent {
+export class UiParentControl extends UiComponent {
     componentName: string;
     name: string;
     element: any;

@@ -17,4 +17,8 @@ export class UiComponent {
     define() {
         return this.prefix + '-' + this.componentName;
     }
+
+    defineBlock(block) {
+        return this.prefix + '-' + this.componentName + this.block + block;
+    }
 }
