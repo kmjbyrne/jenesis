@@ -1,0 +1,189 @@
+.ui-button {
+    &__group {
+        margin: 3rem 0;
+    }
+
+    &__group &__item {
+        margin: 0 2.5rem;
+    }
+
+    &__item,
+    &__single {
+        background-color: $secondary-color;
+        color: $tertiary-color;
+        border: none;
+        margin: 0px 2.5rem;
+        padding: 15px 50px;
+        font-size: 1rem;
+
+        @include responsive("tablet-wide", max) {
+            display: block;
+            width: 100%;
+        }
+    }
+
+    &--fill {
+        width: 100%;
+        margin: 0;
+    }
+
+    &__item:hover {
+        box-shadow: 1px 1px 1px rgba(86, 86, 86, 0.50);
+    }
+
+    @include responsive("tablet-wide", max) {
+
+        &__group &__item,
+        &__item {
+            width: 50%;
+            margin: 15px auto;
+        }
+    }
+
+    @include responsive("tablet", max) {
+
+        &__group &__item,
+        &__item {
+            width: 100%;
+            margin: 15px auto;
+        }
+    }
+}
+
+.ui-navicon {
+    position: relative;
+    cursor: pointer;
+    left: 0;
+    display: none;
+
+    @include responsive("tablet-wide", max) {
+        display: inline-block;
+    }
+
+    &__bars {
+        z-index: 10;
+        width: 35px;
+        height: 30px;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .5s ease-in-out;
+        -moz-transition: .5s ease-in-out;
+        -o-transition: .5s ease-in-out;
+        transition: .5s ease-in-out;
+        cursor: pointer;
+    }
+
+    &__bar {
+        background-color: $primary-color;
+        display: block;
+        position: absolute;
+        height: 4px;
+        width: 100%;
+        border-radius: 0px;
+        opacity: 1;
+        right: 0;
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+        transform: rotate(0deg);
+        -webkit-transition: .25s ease-in-out;
+        -moz-transition: .25s ease-in-out;
+        -o-transition: .25s ease-in-out;
+        transition: .25s ease-in-out;
+    }
+
+    &__bar:nth-child(1) {
+        top: 0px;
+    }
+
+    &__bar:nth-child(2),
+    &__bars &__bar:nth-child(3) {
+        top: 10px;
+    }
+
+    &__bar:nth-child(4) {
+        top: 20px;
+    }
+
+    &--opened &__bar:nth-child(1) {
+        top: 10px;
+        width: 0%;
+        left: 50%;
+    }
+
+    &--opened &__bar:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    &--opened &__bar:nth-child(2) {
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        -o-transform: rotate(45deg);
+        transform: rotate(45deg);
+    }
+
+    &--opened &__bar:nth-child(3) {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        -o-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    &--opened &__bar:nth-child(4) {
+        top: 15px;
+        width: 0%;
+        left: 50%;
+    }
+}
+
+
+.bns-button {
+    display: inline-block;
+    background-color: $secondary-color;
+    color: #dadada;
+    border: none;
+    margin: 1rem 0rem;
+    padding: 15px 50px;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+    transition: background-color 0.3s,box-shadow 0.3s,color 0.3s,opacity 0.3s;
+
+    font-size: 1rem;
+    line-height: 2.8;
+    padding: 0 1.5em;
+    text-transform: uppercase;
+    overflow: hidden;
+    border-radius: 3px;
+
+    margin: 4px 0;
+    box-shadow: 0 2px 1px rgba(0,0,0,.1), 0 1px 3px rgba(0,0,0,.3);
+    transition: background-color 0.3s,box-shadow 0.3s,color 0.3s,opacity 0.3s;
+
+    &:hover {
+        box-shadow: 0 2px 3px rgba(0,0,0,.1), 0 4px 8px rgba(0,0,0,.3);
+        color: white;
+    }
+
+    &:focus {
+        box-shadow: 0 3px 3px rgba(0,0,0,.1),0 5px 8px rgba(0,0,0,.16),0 9px 20px rgba(0,0,0,.16)!important;
+    }
+
+    &--small {
+        padding: 0.25rem;
+    }
+}
+
+.bns-button-i {
+    display: inline-block;
+    background-color: #dadada;
+    color: #811616;
+    border: none;
+    margin: 1rem 0rem;
+    padding: 15px 50px;
+    font-size: 1rem;
+}

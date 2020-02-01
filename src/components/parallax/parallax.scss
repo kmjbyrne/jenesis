@@ -1,35 +1,43 @@
 .ui-parallax {
     position: relative;
     overflow: hidden;
-
     &__container {
         height: auto;
         position: relative;
-        overflow: hidden;
+		overflow: hidden;
     }
-
     &__image-container {
         position: absolute;
-        height: 100%;
-        width: 100%;
+        width: 150%;
         overflow: hidden;
-    }
 
+    }
     &__image {
         z-index: -1;
-        width: 100%;
+        height: 1200px;
     }
 
+    &__image-horiztonal {
+        z-index: -1;
+        width: 200%;
+
+    }
+
+    &__image-zoom {
+        z-index: -1;
+        width: 100%;
+		transform: scale(1);
+		@include transition-all(1000ms);
+    }
     &__content {
         position: relative;
         width: 100%;
         padding: 100px 0px;
     }
-
     &--darkground {
-        background-color: rgba(0, 0, 0, 0.60);
+        background-color: rgba(0, 0, 0, 0.75);
     }
-
-    padding: 75px 0px 0px;
+    padding: 0px 0px 0px;
     margin-bottom: 0px;
+	@include transition-all(200ms);
 }

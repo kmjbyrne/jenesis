@@ -1,0 +1,131 @@
+.bns-slideshow {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+
+    &__slide {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        transform: translateX(-200%);
+        transition: transform 0.5s ease-in-out;
+        transition-delay: 2s;
+    }
+
+    %arrow {
+        border: solid white;
+        border-width: 0 3px 3px 0;
+        display: inline-block;
+        padding: 5px;
+    }
+
+    &__border {
+        padding: 2rem;
+        border: 1px solid transparent;
+        border-radius: 50%;
+    }
+
+    &__next,
+    &__prev {
+        top: calc(50% - 2rem);
+        transform: translateY(-50%, 0);
+    }
+
+    &__next {
+        z-index: 100;
+        position: absolute;
+        right: 2rem;
+    }
+
+    &__prev {
+        z-index: 100;
+        position: absolute;
+        left: 2rem;
+    }
+
+    &__next-btn {
+        @extend %arrow;
+        transform: rotate(-45deg);
+        // -webkit-transform: rotate(-45deg);
+    }
+
+    &__prev-btn {
+        @extend %arrow;
+        transform: rotate(135deg);
+        // -webkit-transform: rotate(135deg);
+    }
+
+    &__slide:first-child {
+        transform: translateX(0%);
+    }
+
+    &--active+&__slide:first-child {
+        animation-name: slide-left;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &--active {
+        animation-name: slide;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &--fading {
+        animation-name: slide-left;
+        animation-delay: 1s;
+        animation-duration: 1s;
+        animation-fill-mode: both;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    &__selector {
+        position: absolute;
+        width: 100px;
+        left: 50%;
+        margin-left: -50px;
+        bottom: 20px;
+        text-align: center;
+
+        li {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            background-color: white;
+            border-radius: 50%;
+            margin: 0 4px;
+            opacity: 0.5;
+            cursor: pointer;
+            transition: opacity 0.3s;
+
+            &.active,
+            &:hover {
+                opacity: 1;
+            }
+        }
+
+    }
+}
+
+@keyframes slide {
+    from {
+        transform: translateX(200%);
+    }
+
+    to {
+        transform: translateX(0%);
+    }
+}
+
+@keyframes slide-left {
+    from {
+        transform: translateX(0%);
+    }
+
+    to {
+        transform: translateX(-200%);
+    }
+}

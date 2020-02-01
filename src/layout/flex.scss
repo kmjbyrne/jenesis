@@ -1,0 +1,125 @@
+.container {
+    display: flex;
+    width: auto;
+    margin: 0 auto;
+    flex-direction: column;
+    max-width: $page-width;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.container {
+    flex-direction: column;
+
+    @include responsive("tablet-wide", max) {
+        margin: 0px 10px;
+        width: auto;
+    }
+}
+
+.text-center {
+    text-align: center;
+    align-items: center;
+    align-content: center;
+    align-self: center;
+    justify-content: center;
+}
+
+.row {
+    flex: 1;
+    display: flex;
+    margin: 25px 0px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    @include responsive("tablet-wide", max) {
+        flex-direction: column;
+    }
+
+    &--vertical {
+        flex-direction: column;
+    }
+
+    &--center {
+        align-items: center;
+    }
+
+    &--nomargin {
+        margin: 0;
+    }
+}
+
+.col-6 {
+    width: 47.5%;
+    flex: none;
+
+    @include responsive("tablet-wide", max) {
+        width: auto;
+        flex: 1;
+    }
+}
+
+.col-9 {
+    width: 75%;
+    flex: none;
+}
+
+.col-4 {
+    width: 30%;
+}
+
+.col {
+    flex: 1;
+    align-self: flex-start;
+    padding: 20px;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+
+.flexcol {
+    flex: 1;
+    align-self: flex-start;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch;
+}
+
+.col-3 {
+    padding: 20px;
+    width: 20%;
+    flex: none;
+
+    @include responsive("tablet-wide", max) {
+        width: auto;
+        flex: 1;
+    }
+}
+
+.col-3 {
+    width: 20%;
+    flex: none;
+    display: flex;
+
+    @include responsive("tablet-wide", max) {
+        width: auto;
+        flex: 1;
+    }
+}
+
+
+.align-right {
+    text-align: right;
+}
+
+.align-left {
+    text-align: left;
+}
+
+.center-mobile {
+    @include responsive("tablet-wide", max) {
+        text-align: center;
+    }
+}

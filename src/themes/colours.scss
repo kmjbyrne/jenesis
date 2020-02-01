@@ -1,0 +1,40 @@
+@import "../abstracts/variables.scss";
+
+.cream {
+    background-color: #f7f5f4;
+}
+
+.color-inverse {
+    color: white;
+}
+
+.dark {
+    background-color: $primary-color;
+    color: $light-grey;
+}
+
+.red-link {
+    color: lighten($secondary-color, 25%);
+}
+
+
+.icon {
+    font-size: 3rem;
+    padding: 2rem;
+}
+
+.green {
+    color: green;
+}
+
+.gold {
+    color: goldenrod;
+}
+
+.pink {
+    color: pink;
+}
+
+.orange {
+    color: #f69116;
+}

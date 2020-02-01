@@ -1,0 +1,47 @@
+.ui-posts {
+	margin: 100px 0px;
+	&__container {
+		@include flex;
+		@include responsive("tablet", max) {
+			flex-direction: column;
+		}
+		@include responsive("tablet-wide", max) {
+		 flex-wrap: 1;
+		}
+	}
+
+	&__post {
+		background-color: white;
+		position: relative;
+		margin: 15px;
+		flex: 1;
+		box-shadow: 2px 2px 5px 0px #b1a7a769;
+		@include responsive("tablet-wide", max) {
+			flex: 0 50%;
+		}
+	}
+
+	&__title {
+		color: $primary-color;
+	}
+
+	&__body {
+		padding: 20px;
+	}
+
+	&__image {
+		max-width: 100%;
+	}
+
+	&__signature {
+		padding: 15px 0px;
+	}
+
+	&__link {
+		color: $secondary-color;
+		:hover {
+			text-decoration: none;
+			color: $primary-color;
+		}
+	}
+}

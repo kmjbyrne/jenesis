@@ -1,0 +1,26 @@
+/* Style the button that is used to open and close the collapse content */
+.bns-collapse {
+    cursor: pointer;
+    width: 100%;
+    border: none;
+    outline: none;
+
+    &:after {
+        content: "\02795";
+        /* Unicode character for "plus" sign (+) */
+        font-size: 13px;
+        float: right;
+        margin-left: 5px;
+    }
+}
+
+.bns-collapse--show:after {
+    content: "\2796";
+}
+
+.bns-collapse-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    transition: all 250ms ease-in-out;
+}

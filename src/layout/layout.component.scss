@@ -1,0 +1,154 @@
+@import "../abstracts/mixins.scss";
+
+.bns-layout {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.bns-page {
+    max-width: $page-width;
+    margin: 0 auto;
+}
+
+.bns-landing {
+    position: relative;
+    height: 550px;
+    width: 100%;
+    text-align: center;
+    min-height: auto;
+    color: white;
+    z-index: 20;
+
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+        display: inline-block;
+        vertical-align: baseline;
+        background-position: center;
+        background-size: cover;
+
+        @include responsive("tablet-wide", max) {
+            width: 1000px;
+        }
+    }
+
+    &__image:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, .5);
+    }
+
+    &__background {
+        background-position: center;
+        background-size: cover;
+    }
+
+    &__caption {
+        background-color: rgba(0, 0, 0, 0.5);
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        position: absolute;
+    }
+
+    &__inner {
+        position: relative;
+        top: 2rem;
+        left: 50%;
+        width: 100%;
+        max-width: 450px;
+        padding: 0;
+        z-index: 20;
+        transform: translateX(-50%);
+        max-width: $page-width;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        span,
+        p {
+            color: white;
+        }
+
+        p {
+            font-size: 1.25rem;
+        }
+    }
+
+    @include responsive("tablet", max) {
+        height: 950px;
+    }
+}
+
+.bns-landing-cover {
+    &__image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        height: 100%;
+        width: 100%;
+        border: 0;
+        display: inline-block;
+        vertical-align: baseline;
+    }
+
+    &:after {
+        position: absolute;
+        width: 100%;
+        height: 37px;
+        bottom: 0;
+        margin: auto;
+        z-index: 20;
+    }
+
+    &__intro,
+    &__mission {
+        max-width: $page-width;
+        padding: 0rem 2rem;
+        margin: 0 auto;
+
+    }
+
+    &__logo {
+        margin: 2rem 0rem;
+        text-align: center;
+
+        img {
+            max-width: 150px;
+        }
+    }
+}
+
+.bns-layout-dark {
+    background: #0F2027;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: white;
+
+    h1,
+    h2,
+    h3 {
+        color: white;
+    }
+}

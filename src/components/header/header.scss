@@ -1,0 +1,90 @@
+.bns-header {
+    background-color: $background-two;
+    border-bottom: 1px solid $light-grey;
+
+    &__inner {
+        width: 100%;
+        max-width: 1340px;
+        padding: 0 1rem;
+        margin: 0 auto;
+        display: flex;
+        box-sizing: border-box;
+    }
+
+    &__icon {
+        padding: 0rem 0.5rem;
+    }
+
+    &__group {
+        flex: 1;
+        display: flex;
+        align-self: center;
+        align-items: center;
+    }
+
+    &__items {
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-end;
+    }
+
+    &--left {
+        justify-content: flex-start;
+    }
+
+    &__item {
+        margin: 0 0.25rem;
+        flex: 0;
+        white-space: nowrap;
+    }
+
+    &__link {
+        display: block;
+        padding: 2rem 0rem;
+
+        span {
+            font-size: 0.85rem;
+        }
+    }
+
+    &__icon {
+        padding-right: 10px;
+    }
+
+    &__search {
+        width: 300px;
+    }
+
+
+    @include responsive('tablet-wide', max) {
+        &__search {
+            display: none;
+        }
+
+        &__items {
+            flex-wrap: wrap;
+        }
+
+        &__link,
+        &__toggle,
+        &__link span {
+            font-size: 0.75rem;
+            padding: 0rem;
+        }
+
+        &__toggle {
+            padding: 1rem 0rem 1rem 0rem;
+        }
+
+        &--right {
+            flex: 0;
+            width: 25%;
+        }
+    }
+
+
+    &--right {
+        justify-content: flex-end;
+    }
+}
