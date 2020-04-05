@@ -1,6 +1,6 @@
 @import "./mixins.scss";
 
-$page-width: 1080px;
+$page-width: 1340px;
 $navy: #141728;
 $blue: #151887;
 $red: #811616;
@@ -21,9 +21,3 @@ $tertiary-inverse: #3c3c3c;
 $global-transition: 350ms;
 
 $page-width: 1340px;
-
-@include responsive('tablet-wide', min) {
-    .mobile {
-        display: none;
-    }
-}

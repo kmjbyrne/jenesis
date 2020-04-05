@@ -1,24 +1,31 @@
 .c-dropdown {
     overflow: hidden;
+
     &:hover {
         overflow: visible;
     }
+
     &:hover &__subgroup {
         height: auto;
     }
+
     &__toggle {}
+
     &__subgroup {
         position: absolute;
         overflow: hidden;
         height: 0;
+
         @include responsive("tablet-wide", max) {
             position: relative;
             height: auto;
         }
     }
+
     &__item {}
+
     &--dark {
-        background-color: $tertiary-grey-trans;
+        // background-color: $tertiary-grey-trans;
         color: white;
     }
 }

@@ -2,8 +2,8 @@ import { UiParentComponent } from "../components/base/parent.component";
 import { DomHelper } from "../components/utils/dom-helper";
 
 export class CookieDisclaimer extends UiParentComponent {
-    name = 'cookie-disclaimer';
-    action = 'js-cookie-accept';
+    name = "cookie-disclaimer";
+    action = "js-cookie-accept";
     controller: any;
 
     constructor() {
@@ -19,11 +19,11 @@ export class CookieDisclaimer extends UiParentComponent {
     }
 
     toggle() {
-        this.element.classList.add(this.getModifierKeyName('hide'));
+        this.element.classList.add(this.getModifierKeyName("hide"));
     }
 
     checkCookieAcceptance() {
-        if (localStorage.getItem('accepted') === 'true') {
+        if (localStorage.getItem("accepted") === "true") {
             this.element.remove();
         } else {
             this.toggle();
@@ -31,7 +31,7 @@ export class CookieDisclaimer extends UiParentComponent {
     }
 
     registerCookieAcceptance() {
-        localStorage.setItem('accepted', 'true');
+        localStorage.setItem("accepted", "true");
         this.checkCookieAcceptance();
     }
 
@@ -40,7 +40,7 @@ export class CookieDisclaimer extends UiParentComponent {
     }
 
     setActivityListener(callback: any = false) {
-        this.controller.addEventListener('click', () => {
+        this.controller.addEventListener("click", () => {
             this.registerCookieAcceptance();
         });
     }

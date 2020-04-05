@@ -2,7 +2,7 @@
     "name": "@snapatoms/core",
     "version": "0.0.4",
     "description": "Complete Rapid Development Library. Useful reusable front end components for projects",
-    "main": "index.js",
+    "main": "./dist/app.bundle.js",
     "scripts": {
         "start": "run build",
         "build": "./node_modules/.bin/webpack --progress --profile --colors --mode production --config webpack/prod.config.js",
@@ -13,7 +13,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/kmjbyrne/snap-ui.git"
+        "url": "git+https://github.com/kmjbyrne/snapatoms.git"
     },
     "keywords": [
         "js",
@@ -25,12 +25,12 @@
     "author": "Keith Byrne",
     "license": "MIT",
     "bugs": {
-        "url": "https://github.com/kmjbyrne/snap-ui/issues"
+        "url": "https://github.com/kmjbyrne/snapatoms/issues"
     },
     "files": [
         "/dist"
     ],
-    "homepage": "https://github.com/kmjbyrne/snap-ui#readme",
+    "homepage": "https://github.com/kmjbyrne/snapatoms#readme",
     "devDependencies": {
         "@babel/core": "^7.5.5",
         "@babel/plugin-proposal-class-properties": "^7.5.5",
